@@ -1,136 +1,116 @@
-🏦 Bank Account Management System (C)
-📌 Project Description
+BANK MANAGEMENT SYSTEM (C LANGUAGE)
 
-This is a Bank Account Management System written in the C programming language.
-The program uses random-access file processing to store, update, delete, and retrieve bank account records from a binary file (credit.dat).
+A file-based Bank Management System developed using the C programming language.
+This project simulates real-world banking operations with authentication, account management, transaction tracking, and admin control features.
 
-It demonstrates practical usage of:
+FEATURES
 
-Structures in C
+SECURITY SYSTEM:
 
-File handling (binary files)
+System-level login using a common password
+Account-level password protection for each user
+Admin authentication for sensitive operations
+Account lock after multiple failed login attempts
+Admin unlock functionality for locked accounts
 
-Random access using fseek()
+USER FEATURES:
 
-Reading and writing records using fread() and fwrite()
+Create new bank account
+Deposit and withdraw money
+View personal account details
+View personal transaction history
+Secure password-protected access
 
-📂 Project Files
+ADMIN FEATURES:
 
-main.c – Source code of the program
+View all accounts
+Delete any account
+View all transactions
+Unlock locked accounts
 
-credit.dat – Binary file storing account records
+BANKING FEATURES:
 
-accounts.txt – Generated formatted text file
+File-based persistent storage (credit.dat)
+Transaction logging system (transactions.dat)
+Fast record access using fixed-size file structure
+Balance update system with real-time saving
 
-README.md – Project documentation
+FILE STRUCTURE
 
-🗂 Structure Used
-struct clientData
-{
-    unsigned int acctNum;
-    char lastName[15];
-    char firstName[10];
-    double balance;
-};
+bank.c -> Main source code file
+credit.dat -> Binary file storing account data
+transactions.dat -> Binary file storing transaction history
 
-Each record contains:
+HOW TO COMPILE AND RUN
 
-Account Number
+Compile:
+gcc bank.c -o bank
 
-Last Name
-
-First Name
-
-Balance
-
-⚙️ Features
-
-The program provides the following options:
-
-Store formatted text file
-
-Creates accounts.txt for printing
-
-Update an account
-
-Add charge (+)
-
-Make payment (-)
-
-Add a new account
-
-Insert new record into file
-
-Delete an account
-
-Removes existing record
-
-Exit program
-
-🔁 How It Works
-
-The file credit.dat is opened in binary mode (rb+)
-
-The program uses:
-
-fseek() to jump to a specific record
-
-fread() to read data
-
-fwrite() to update data
-
-Each account number corresponds to a fixed position in the file.
-
-Example:
-
-fseek(fPtr, (account - 1) * sizeof(struct clientData), SEEK_SET);
-
-This allows direct access to any account without reading the entire file.
-
-🛠 How to Compile and Run
-Using GCC (Windows / Linux)
-gcc main.c -o bank
+Run:
 ./bank
-If using Windows Command Prompt:
-gcc main.c -o bank.exe
-bank.exe
-📘 Concepts Demonstrated
 
-Random-access files
+DEFAULT CREDENTIALS
 
-Binary file handling
+System Password:
+bank@123
 
-Structured data storage
+Admin Password:
+root123
 
-Menu-driven programs
+CORE CONCEPTS USED
 
-Updating records in-place
+File Handling in C (fopen, fread, fwrite, fseek)
+Structures
+String Handling
+Input Validation
+Authentication System Design
+Role-based Access Control
 
-📚 Learning Outcome
+SECURITY FEATURES
 
-After completing this project, you will understand:
+3-attempt login restriction for accounts
+Account locking after failed attempts
+Admin-controlled unlock system
+Role-based access control system
 
-How databases work at a low level
+MENU SYSTEM
 
-How file systems store structured records
+Create Account
+Deposit / Withdraw
+View My Account
+View My Transactions
+Delete Account (Admin)
+View All Accounts (Admin)
+View All Transactions (Admin)
+Unlock Account (Admin)
+Exit
 
-How to modify data without rewriting the entire file
+LEARNING OUTCOMES
 
-Real-world usage of C file handling
+This project helps in understanding:
 
-🚀 Future Improvements
+Real-world banking logic implementation
+Secure authentication system design
+File-based database handling
+Role-based access control system
+Data persistence in C programming
 
-Add password protection
+LIMITATIONS
 
-Add transaction history
+Passwords are stored in plain text (not encrypted)
+No database system (uses binary files only)
+Single-user execution (no multi-user concurrency support)
 
-Add input validation
+FUTURE IMPROVEMENTS
 
-Convert to graphical interface
+Password hashing for security
+SQLite database integration
+GUI-based interface
+Transaction timestamps
+Full audit logging system
 
-Store data in a database (MySQL / SQLite)
-
-👨‍💻 Author
+AUTHOR
 
 Vignesh
 B.E. Computer Science and Engineering
+Mini Project: Bank Management System
