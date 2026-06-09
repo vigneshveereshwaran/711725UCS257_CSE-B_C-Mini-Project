@@ -111,11 +111,6 @@ Full audit logging system
 
 AUTHOR
 
-Vignesh
-<<<<<<< HEAD
-B.E. Computer Science and Engineering# miniproject
-=======
-B.E. Computer Science and Engineering
-Mini Project: Bank Management System
->>>>>>> 5537388211b9bff8c71250e2e87ebe333631b136
-# miniproject
+Vignesh 
+
+B.E. Computer Science and Engineering  miniproject
